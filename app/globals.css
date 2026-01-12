@@ -1,26 +1,40 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --button: #6246ea;
+  --background: #fffffe;
+  --primary: #2b2c34;
+  --secondary: #d1d1e9;
+  --tertiary: #e45858;
 }
 
 @theme inline {
+  --color-button: var(--button);
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --font-sans: var(--font-work-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  .button-primary {
+    @apply bg-button text-background px-4 py-2 rounded-md cursor-pointer text-center uppercase font-medium border-button border-2 hover:bg-background hover:text-button focus-visible:bg-background focus-visible:text-button focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-button outline-none transition-all duration-300;
+  }
+  .button-secondary {
+    @apply bg-tertiary text-background px-4 py-2 rounded-md cursor-pointer text-center uppercase font-medium border-tertiary border-2 hover:bg-background hover:text-tertiary focus-visible:bg-background focus-visible:text-tertiary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tertiary outline-none transition-all duration-300;
+  }
+  .button-tertiary {
+    @apply  bg-background text-button px-4 py-2 rounded-md cursor-pointer text-center uppercase font-medium border-button border-2 hover:bg-button hover:text-background focus-visible:bg-button focus-visible:text-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-button outline-none transition-all duration-300;
+  }
+  h1 {
+    @apply text-3xl font-bold ;
   }
 }
 
+
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+ 
+  font-family: var(--font-work-sans);
 }
