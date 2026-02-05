@@ -24,4 +24,11 @@ describe("Pagination component - Testing Level 1", () => {
         render(<Pagination currentPage={5} totalPages={10} onPageChange={() => { }} />);
         expect(screen.getAllByText("...")).toHaveLength(2);
     });
+    it("shows correct page number",()=>{
+        render(<Pagination currentPage={5} totalPages={10} onPageChange={() => { }} />);
+        [1,4,5,6,10].forEach(num=>{
+            expect(screen.getByRole("button",{name:num})).toBeInTheDocument()
+
+        })
+    })
 });

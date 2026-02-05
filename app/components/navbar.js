@@ -7,6 +7,7 @@ export default function Navbar() {
       </Link>
       <Link
         href="/my-team"
+        aria-label="My Team"
         className="text-xl font-bold flex gap-2 items-center group"
       >
         <div className="w-6 h-6">

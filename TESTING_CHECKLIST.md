@@ -14,8 +14,8 @@ Checklist de tests a desarrollar, organizados de menor a mayor complejidad.
 - [x] Cálculo de páginas visibles: Muestra correctamente los números con elipsis ("...") para muchas páginas
 
 ### `Navbar`
-- [ ] Links presentes: Existen los links a "/" y "/my-team"
-- [ ] Texto del logo: Muestra "Dog Team Manager"
+- [x] Links presentes: Existen los links a "/" y "/my-team"
+- [x] Texto del logo: Muestra "Dog Team Manager"
 
 ### `Search`
 - [ ] Input con placeholder "Search"
