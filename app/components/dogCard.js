@@ -4,6 +4,7 @@ import { TeamContext } from "../context/teamContext";
 export default function DogCard({ dog, breed }) {
   const { addToTeam, removeFromTeam, team } = useContext(TeamContext);
   const isInTeam = team.dogs[breed]?.some((d) => d.id === dog.id);
+  const isInTeam = team.dogs[breed]?.some((d) => d.id === dog.id);
   return (
     <div className="flex flex-col items-center justify-between gap-4 bg-secondary p-4 rounded-lg shadow-md">
       <Image

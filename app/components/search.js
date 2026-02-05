@@ -32,7 +32,7 @@ export default function Search({ breeds }) {
         onChange={(e) => setSearch(e.target.value)}
       />
       <div className="flex flex-col gap-4">
-        <ul className="grid sm:grid-cols-3 md:grid-cols-4 gap-4 ">
+      {filteredBreeds.length > 0 ? <ul className="grid sm:grid-cols-3 md:grid-cols-4 gap-4 ">
           {filteredBreeds.map((breed) => (
             <Link
               href={`/breed/${breed}`}
@@ -42,7 +42,7 @@ export default function Search({ breeds }) {
               {breed}
             </Link>
           ))}
-        </ul>
+        </ul> : <p>No results found</p>}
       </div>
     </>
   );
