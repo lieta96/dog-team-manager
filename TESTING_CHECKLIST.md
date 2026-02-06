@@ -18,27 +18,26 @@ Checklist de tests a desarrollar, organizados de menor a mayor complejidad.
 - [x] Texto del logo: Muestra "Dog Team Manager"
 
 ### `Search`
-- [ ] Input con placeholder "Search"
-- [ ] Textbox vacío al renderizar
-- [ ] Muestra todas las razas cuando el input está vacío
-- [ ] Mensaje "No results found" cuando el filtro no encuentra coincidencias
-- [ ] Búsqueda case-insensitive: "BREED1" encuentra "breed1"
-- [ ] Búsqueda con espacios en blanco no filtra
+- [x] Input con placeholder "Search"
+- [x] Textbox vacío al renderizar
+- [x] Muestra todas las razas cuando el input está vacío
 
 ---
 
 ## NIVEL 2: Tests con Interacción del Usuario
 
 ### `Pagination` (interacciones)
-- [ ] Click en número de página: Llama `onPageChange` con el número correcto
-- [ ] Click en Previous: Llama `onPageChange(currentPage - 1)`
-- [ ] Click en Next: Llama `onPageChange(currentPage + 1)`
-- [ ] Navegación secuencial: Varios clicks mantienen el estado correcto
+- [x] Click en número de página: Llama `onPageChange` con el número correcto
+- [x] Click en Previous: Llama `onPageChange(currentPage - 1)`
+- [x] Click en Next: Llama `onPageChange(currentPage + 1)`
 
 ### `Search` (con timers/debounce)
 - [ ] Debounce funciona: El filtrado NO ocurre inmediatamente
 - [ ] Debounce timing: Después de 500ms se aplica el filtro
 - [ ] Cancelación de debounce: Si el usuario escribe rápido, solo se aplica el último valor
+- [ ] Mensaje "No results found" cuando el filtro no encuentra coincidencias
+- [ ] Búsqueda case-insensitive: "BREED1" encuentra "breed1"
+- [ ] Búsqueda con espacios en blanco no filtra
 
 ---
 
@@ -117,10 +116,10 @@ Checklist de tests a desarrollar, organizados de menor a mayor complejidad.
 
 | Nivel | Completados | Total |
 |-------|-------------|-------|
-| 1     | 0           | 12    |
-| 2     | 0           | 7     |
+| 1     | 10          | 10    |
+| 2     | 3           | 9     |
 | 3     | 0           | 12    |
 | 4     | 0           | 9     |
-| 5     | 0           | 9     |
+| 5     | 0           | 8     |
 | 6     | 0           | 6     |
-| **Total** | **0**   | **55** |
+| **Total** | **13**  | **54** |
