@@ -7,7 +7,7 @@ describe("Search component", () => {
     // Arrange
     const breeds = [];
     // Act
-    render(<Search breeds={breeds}/>);
+    render(<Search breeds={breeds} />);
     // Assert
     expect(screen.getByPlaceholderText("Search")).toBeInTheDocument();
   });
@@ -15,15 +15,15 @@ describe("Search component", () => {
     // Arrange
     const breeds = [];
     // Act
-    render(<Search breeds={breeds}/>);
+    render(<Search breeds={breeds} />);
     // Assert
     expect(screen.getByRole("textbox")).toHaveValue("");
   });
-it("displays all breeds when the search input is empty", () => {
+  it("displays all breeds when the search input is empty", () => {
     // Arrange
     const breeds = ["breed1", "breed2", "breed3"];
     // Act
-    render(<Search breeds={breeds}/>);
+    render(<Search breeds={breeds} />);
     // Assert
     expect(screen.getAllByRole("link")).toHaveLength(breeds.length);
   });
@@ -31,35 +31,49 @@ it("displays all breeds when the search input is empty", () => {
     // Arrange
     const breeds = ["breed1", "breed2", "breed3"];
     // Act
-    render(<Search breeds={breeds}/>);
+    render(<Search breeds={breeds} />);
     // Assert
     breeds.forEach(breed => {
       expect(screen.getByText(breed)).toBeInTheDocument();
     });
   });
-it("typing in the search input filters the breeds", async () => {
-    // Arrange
+  it("search input case-sensitive", async () => {
     const breeds = ["breed1", "breed2", "breed3"];
-    const search = "breed2";
+    const search = "BREED2";
     const user = userEvent.setup();
-    // Act
-    render(<Search breeds={breeds}/>);
+
+    render(<Search breeds={breeds} />);
     const input = screen.getByPlaceholderText("Search");
     await user.type(input, search);
-    // Assert
-    // expect(screen.getByText(search)).toBeInTheDocument();
-    expect(screen.getAllByRole("link")).toHaveLength(1);
-    // expect(screen.getByText("No results found")).toBeInTheDocument();
-  });
-//   it("display 'no results found' when no breeds are found", async () => {
-//     // Arrange
-//     const breeds = ["breed1", "breed2", "breed3"];
-//     const search = "breed4";
-//     const user = userEvent.setup();
-//     // Act
-//     render(<Search breeds={breeds}/>);
-//     await user.type(screen.getByRole("textbox"), search);
-//     // Assert
-//     expect(screen.getByText("No results found")).toBeInTheDocument();
-//   })
+    expect(screen.getAllByRole("link")).toHaveLength(1)
+
+    // Act
+
+  })
+  // it("typing in the search input filters the breeds", async () => {
+  //     // Arrange
+  //     const breeds = ["breed1", "breed2", "breed3"];
+  //     const search = "breed2";
+  //     const user = userEvent.setup();
+  //     // Act
+  //     render(<Search breeds={breeds}/>);
+  //     const input = screen.getByPlaceholderText("Search");
+  //     await user.type(input, search);
+  //     // Assert
+  //     // expect(screen.getByText(search)).toBeInTheDocument();
+  //     expect(screen.getAllByRole("link")).toHaveLength(1);
+  //     // expect(screen.getByText("No results found")).toBeInTheDocument();
+  //   });
+
+  //   it("display 'no results found' when no breeds are found", async () => {
+  //     // Arrange
+  //     const breeds = ["breed1", "breed2", "breed3"];
+  //     const search = "breed4";
+  //     const user = userEvent.setup();
+  //     // Act
+  //     render(<Search breeds={breeds}/>);
+  //     await user.type(screen.getByRole("textbox"), search);
+  //     // Assert
+  //     expect(screen.getByText("No results found")).toBeInTheDocument();
+  //   })
 });
